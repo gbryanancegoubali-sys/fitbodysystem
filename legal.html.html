@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FitBody — Conditions Générales & Politique de Confidentialité</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --rose:    #FF0090;
+  --noir:    #0A0A0A;
+  --blanc:   #FAFAF7;
+  --gris:    #F3F2EF;
+  --gris2:   #E6E4DF;
+  --gris3:   #9A9890;
+  --texte:   #111111;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  background: var(--blanc);
+  color: var(--texte);
+  font-family: 'DM Sans', sans-serif;
+  line-height: 1.7;
+}
+
+/* NAV */
+nav {
+  position: sticky; top: 0; z-index: 100;
+  padding: 0 52px; height: 68px;
+  display: flex; align-items: center; justify-content: space-between;
+  background: rgba(250,250,247,.95); backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--gris2);
+}
+.logo {
+  font-family: 'Inter', sans-serif;
+  font-size: 20px; font-weight: 800;
+  color: var(--noir); letter-spacing: -.5px;
+  text-decoration: none;
+}
+.logo em { color: var(--rose); font-style: normal; }
+.nav-back {
+  font-size: 13px; color: var(--gris3);
+  text-decoration: none; transition: color .2s;
+}
+.nav-back:hover { color: var(--texte); }
+
+/* HERO */
+.legal-hero {
+  background: var(--noir); padding: 80px 52px 72px;
+  position: relative; overflow: hidden;
+}
+.legal-hero::before {
+  content: '';
+  position: absolute; top: -150px; right: -100px;
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(255,0,144,.1) 0%, transparent 65%);
+  pointer-events: none;
+}
+.legal-hero-tag {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px; font-weight: 700; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--rose); margin-bottom: 20px;
+}
+.legal-hero h1 {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(36px, 4.5vw, 60px);
+  font-weight: 900; color: white;
+  letter-spacing: -2.5px; line-height: 1.0; margin-bottom: 20px;
+}
+.legal-hero h1 em { color: var(--rose); font-style: italic; font-weight: 300; font-family: 'DM Sans', sans-serif; }
+.legal-hero p { font-size: 15px; color: rgba(255,255,255,.4); font-weight: 300; max-width: 560px; }
+.legal-meta {
+  display: flex; gap: 24px; margin-top: 32px; flex-wrap: wrap;
+}
+.legal-meta-item {
+  font-size: 12px; color: rgba(255,255,255,.3);
+  display: flex; align-items: center; gap: 6px;
+}
+.legal-meta-dot { width: 4px; height: 4px; background: var(--rose); border-radius: 50%; }
+
+/* STICKY TOC (table of contents) */
+.legal-layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 0;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 52px;
+  align-items: start;
+}
+
+.toc {
+  position: sticky; top: 80px;
+  padding: 48px 0 48px;
+  border-right: 1px solid var(--gris2);
+}
+.toc-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 10px; font-weight: 700; letter-spacing: .12em;
+  text-transform: uppercase; color: var(--gris3); margin-bottom: 16px;
+  padding-right: 24px;
+}
+.toc-list { list-style: none; }
+.toc-list li { margin-bottom: 4px; }
+.toc-list a {
+  display: block; font-size: 13px; color: var(--gris3);
+  text-decoration: none; padding: 5px 24px 5px 0;
+  border-right: 2px solid transparent;
+  transition: all .2s;
+  line-height: 1.4;
+}
+.toc-list a:hover { color: var(--texte); border-right-color: var(--rose); }
+.toc-list a.active { color: var(--rose); font-weight: 500; border-right-color: var(--rose); }
+.toc-sep { height: 1px; background: var(--gris2); margin: 12px 0 12px; margin-right: 24px; }
+
+/* CONTENT */
+.legal-content {
+  padding: 64px 0 64px 64px;
+}
+
+.legal-section {
+  margin-bottom: 64px;
+  scroll-margin-top: 96px;
+}
+.legal-section:last-child { margin-bottom: 0; }
+
+.section-num {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px; font-weight: 700; letter-spacing: .12em;
+  text-transform: uppercase; color: var(--rose); margin-bottom: 12px;
+  display: flex; align-items: center; gap: 10px;
+}
+.section-num::after { content: ''; flex: 1; max-width: 40px; height: 1px; background: var(--rose); }
+
+.section-title {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(22px, 2.5vw, 30px); font-weight: 800;
+  color: var(--texte); letter-spacing: -1px;
+  margin-bottom: 24px; line-height: 1.15;
+}
+
+.section-body { display: flex; flex-direction: column; gap: 16px; }
+.section-body p { font-size: 15px; color: #444; line-height: 1.75; font-weight: 300; }
+.section-body p strong { color: var(--texte); font-weight: 600; }
+
+/* Alerte importante */
+.alert-box {
+  background: rgba(255,0,144,.05);
+  border: 1px solid rgba(255,0,144,.2);
+  border-left: 4px solid var(--rose);
+  border-radius: 0 10px 10px 0;
+  padding: 18px 20px;
+  margin: 4px 0;
+}
+.alert-box p { font-size: 14px; color: var(--texte); font-weight: 400; }
+.alert-box strong { color: var(--rose); }
+
+/* Note neutre */
+.note-box {
+  background: var(--gris);
+  border-radius: 10px; padding: 18px 20px;
+  margin: 4px 0;
+}
+.note-box p { font-size: 14px; color: #555; font-weight: 400; }
+
+/* Liste */
+.legal-list {
+  list-style: none; display: flex; flex-direction: column; gap: 10px;
+}
+.legal-list li {
+  display: flex; align-items: flex-start; gap: 10px;
+  font-size: 15px; color: #444; line-height: 1.65; font-weight: 300;
+}
+.legal-list li::before {
+  content: '→';
+  color: var(--rose); font-size: 14px; flex-shrink: 0; margin-top: 2px; font-weight: 700;
+}
+.legal-list li strong { color: var(--texte); font-weight: 600; }
+
+/* Séparateur entre grandes sections */
+.legal-divider {
+  border: none;
+  border-top: 2px solid var(--gris2);
+  margin: 72px 0;
+}
+
+/* PARTIE 2 — CONFIDENTIALITÉ */
+.part-header {
+  background: var(--gris); border-radius: 16px; padding: 32px 36px;
+  margin-bottom: 48px;
+}
+.part-num {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px; font-weight: 700; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--gris3); margin-bottom: 8px;
+}
+.part-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 28px; font-weight: 900;
+  color: var(--texte); letter-spacing: -1px; margin-bottom: 8px;
+}
+.part-sub { font-size: 14px; color: var(--gris3); font-weight: 300; }
+
+/* FOOTER */
+.legal-footer {
+  background: var(--noir); padding: 36px 52px;
+  display: flex; justify-content: space-between; align-items: center;
+  gap: 20px; flex-wrap: wrap;
+}
+.footer-logo {
+  font-family: 'Inter', sans-serif;
+  font-size: 20px; font-weight: 900; color: white; letter-spacing: -.5px;
+}
+.footer-logo em { color: var(--rose); font-style: normal; }
+.footer-links { display: flex; gap: 20px; flex-wrap: wrap; }
+.footer-links a {
+  font-size: 13px; color: rgba(255,255,255,.35);
+  text-decoration: none; transition: color .2s;
+}
+.footer-links a:hover { color: white; }
+.footer-copy { font-size: 12px; color: rgba(255,255,255,.2); width: 100%; }
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  nav { padding: 0 20px; }
+  .legal-hero { padding: 56px 20px; }
+  .legal-layout { grid-template-columns: 1fr; padding: 0 20px; }
+  .toc { display: none; }
+  .legal-content { padding: 40px 0; }
+  .legal-footer { padding: 28px 20px; flex-direction: column; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="logo">Fit<em>Body</em></a>
+  <a href="index.html" class="nav-back">← Retour au site</a>
+</nav>
+
+<!-- HERO -->
+<div class="legal-hero">
+  <div class="legal-hero-tag">Documents légaux</div>
+  <h1>Conditions Générales<br>& Politique de <em>Confidentialité</em></h1>
+  <p>Ces documents régissent l'utilisation des services FitBody et la protection de vos données personnelles. Veuillez les lire attentivement avant tout achat.</p>
+  <div class="legal-meta">
+    <div class="legal-meta-item"><span class="legal-meta-dot"></span> Dernière mise à jour : Janvier 2025</div>
+    <div class="legal-meta-item"><span class="legal-meta-dot"></span> Applicable immédiatement à tout achat</div>
+    <div class="legal-meta-item"><span class="legal-meta-dot"></span> Version 1.0</div>
+  </div>
+</div>
+
+<!-- LAYOUT -->
+<div class="legal-layout">
+
+  <!-- TABLE DES MATIÈRES -->
+  <aside class="toc">
+    <div class="toc-title">Sommaire</div>
+    <ul class="toc-list">
+      <li><a href="#cgv-intro">1. Présentation & Acceptation</a></li>
+      <li><a href="#cgv-service">2. Description du service</a></li>
+      <li><a href="#cgv-prix">3. Prix et paiement</a></li>
+      <li><a href="#cgv-remboursement">4. Politique de remboursement</a></li>
+      <li><a href="#cgv-coach">5. Rôle du coach</a></li>
+      <li><a href="#cgv-sante">6. Avertissement santé</a></li>
+      <li><a href="#cgv-responsabilite">7. Limitation de responsabilité</a></li>
+      <li><a href="#cgv-pi">8. Propriété intellectuelle</a></li>
+      <li><a href="#cgv-resiliation">9. Résiliation</a></li>
+      <li><a href="#cgv-droit">10. Droit applicable</a></li>
+      <div class="toc-sep"></div>
+      <li><a href="#pc-collecte">11. Données collectées</a></li>
+      <li><a href="#pc-utilisation">12. Utilisation des données</a></li>
+      <li><a href="#pc-partage">13. Partage des données</a></li>
+      <li><a href="#pc-droits">14. Vos droits</a></li>
+      <li><a href="#pc-contact">15. Contact</a></li>
+    </ul>
+  </aside>
+
+  <!-- CONTENU -->
+  <div class="legal-content">
+
+    <!-- ══════════════════════════════════
+         PARTIE 1 — CONDITIONS GÉNÉRALES
+    ══════════════════════════════════ -->
+
+    <!-- 1. PRÉSENTATION -->
+    <div class="legal-section" id="cgv-intro">
+      <div class="section-num">Article 01</div>
+      <h2 class="section-title">Présentation & Acceptation des conditions</h2>
+      <div class="section-body">
+        <p>Les présentes Conditions Générales de Vente et d'Utilisation (ci-après « CGV ») régissent l'ensemble des relations commerciales entre <strong>FitBody</strong> (ci-après « FitBody », « nous » ou « le Prestataire ») et toute personne physique procédant à l'achat d'un service sur le site internet de FitBody (ci-après « le Client » ou « vous »).</p>
+        <p>FitBody propose des services de coaching sportif et nutritionnel personnalisés sous forme de programmes digitaux livrés via messagerie instantanée (WhatsApp), accompagnés d'un suivi individualisé par un coach humain.</p>
+        <div class="alert-box">
+          <p><strong>Acceptation obligatoire :</strong> Toute commande passée sur le site de FitBody vaut acceptation pleine, entière et sans réserve des présentes CGV dans leur intégralité. Si vous n'acceptez pas ces conditions, vous ne devez pas procéder à un achat.</p>
+        </div>
+        <p>FitBody se réserve le droit de modifier les présentes CGV à tout moment. Les modifications prennent effet immédiatement à leur publication et s'appliquent à toute commande postérieure. Il appartient au Client de consulter régulièrement ces CGV.</p>
+      </div>
+    </div>
+
+    <!-- 2. SERVICE -->
+    <div class="legal-section" id="cgv-service">
+      <div class="section-num">Article 02</div>
+      <h2 class="section-title">Description du service</h2>
+      <div class="section-body">
+        <p>FitBody propose le service suivant : la création d'un programme sportif et nutritionnel personnalisé sur une durée de <strong>7 semaines</strong>, accompagné d'un suivi par un coach via WhatsApp.</p>
+        <p>Ce service comprend :</p>
+        <ul class="legal-list">
+          <li><strong>Un programme d'entraînement sur mesure</strong> de 7 semaines, créé après analyse du profil du Client (objectifs, condition physique, disponibilités, équipement disponible).</li>
+          <li><strong>Un suivi par message</strong> via WhatsApp pendant toute la durée du programme, permettant au Client de poser des questions et d'obtenir des ajustements.</li>
+          <li><strong>Un guide nutritionnel</strong> adapté aux objectifs du Client, fourni à titre informatif et indicatif.</li>
+        </ul>
+        <div class="note-box">
+          <p>Le programme est livré sous format numérique (PDF ou équivalent) via WhatsApp. Aucun équipement physique, aucun produit, aucune consultation médicale ou diététique agréée n'est inclus dans le service.</p>
+        </div>
+        <p>FitBody se réserve le droit de faire appel à tout coach qualifié de son équipe pour assurer le suivi du Client. Le Client ne peut pas choisir ni imposer un coach particulier.</p>
+      </div>
+    </div>
+
+    <!-- 3. PRIX -->
+    <div class="legal-section" id="cgv-prix">
+      <div class="section-num">Article 03</div>
+      <h2 class="section-title">Prix et conditions de paiement</h2>
+      <div class="section-body">
+        <p>Le prix du service FitBody est affiché sur le site au moment de la commande, libellé en <strong>Francs CFA (XOF)</strong>. FitBody se réserve le droit de modifier ses tarifs à tout moment. Le prix applicable est celui en vigueur au moment de la validation de la commande.</p>
+        <p>Le paiement est exigible en intégralité au moment de la commande. Aucun paiement différé, en plusieurs fois ou à crédit n'est proposé.</p>
+        <p>Les moyens de paiement acceptés incluent notamment :</p>
+        <ul class="legal-list">
+          <li>Mobile Money (MTN, Moov, Orange Money, Wave, et autres services disponibles selon le pays)</li>
+          <li>Carte bancaire (Visa, Mastercard)</li>
+          <li>Tout autre moyen de paiement proposé par notre prestataire de paiement Moneroo (Axa Zara)</li>
+        </ul>
+        <p>Le paiement est sécurisé et traité par <strong>Moneroo</strong>. FitBody ne stocke ni ne traite directement les informations bancaires ou de paiement des Clients. En cas d'échec du paiement, le service n'est pas activé.</p>
+        <div class="alert-box">
+          <p><strong>Activation du service :</strong> Le service n'est activé qu'après confirmation effective du paiement par notre prestataire de paiement. Tout paiement non confirmé, annulé ou rejeté entraîne la non-activation du service sans obligation de FitBody à l'égard du Client.</p>
+        </div>
+        <p>Des codes promotionnels peuvent être proposés par FitBody à titre discrétionnaire. Ces codes ne sont ni cumulables entre eux, ni échangeables contre de l'argent, ni valables rétroactivement.</p>
+      </div>
+    </div>
+
+    <!-- 4. REMBOURSEMENT -->
+    <div class="legal-section" id="cgv-remboursement">
+      <div class="section-num">Article 04</div>
+      <h2 class="section-title">Politique de remboursement — Aucun remboursement</h2>
+      <div class="section-body">
+        <div class="alert-box">
+          <p><strong>POLITIQUE FERME ET IRRÉVOCABLE :</strong> En raison de la nature numérique et immédiatement personnalisée du service fourni par FitBody, <strong>aucun remboursement n'est accordé</strong>, quelle que soit la raison invoquée, une fois le paiement confirmé.</p>
+        </div>
+        <p>En achetant un service FitBody, le Client reconnaît et accepte expressément que :</p>
+        <ul class="legal-list">
+          <li>Le service est de nature <strong>numérique et personnalisée</strong> — un programme unique est créé spécifiquement pour le Client dès activation du paiement, ce qui entraîne des coûts immédiats et irréversibles pour FitBody.</li>
+          <li>Conformément à la nature du service, le <strong>droit de rétractation habituel</strong> applicable aux achats à distance ne s'applique pas aux contenus numériques dont l'exécution a commencé avec l'accord exprès du consommateur.</li>
+          <li><strong>Aucun remboursement</strong> ne sera effectué pour les motifs suivants (liste non exhaustive) : insatisfaction personnelle, absence d'utilisation du service, changement d'objectif, blessure, problème de santé survenu après l'achat, incompatibilité prétendue avec le programme, résultats jugés insuffisants, ou toute autre raison personnelle.</li>
+          <li><strong>Aucun remboursement partiel</strong> ne sera accordé en cas d'arrêt du programme avant son terme.</li>
+          <li>Toute tentative de rétrofacturation (chargeback) ou de contestation auprès d'un organisme de paiement sans accord préalable de FitBody sera considérée comme une fraude et traitée comme telle auprès des autorités compétentes.</li>
+        </ul>
+        <div class="note-box">
+          <p>En cas de problème technique avéré empêchant totalement la prestation de service de notre côté (impossibilité absolue de contacter le Client et de livrer le programme malgré nos tentatives documentées), FitBody pourra, à sa seule discrétion, proposer un avoir ou un avoir commercial. Cela ne constitue pas un droit au remboursement.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. RÔLE DU COACH -->
+    <div class="legal-section" id="cgv-coach">
+      <div class="section-num">Article 05</div>
+      <h2 class="section-title">Rôle, limites et obligations du coach</h2>
+      <div class="section-body">
+        <p>Les coachs FitBody sont des professionnels du sport et du bien-être dont le rôle est de fournir des conseils et programmes d'entraînement à titre informatif et d'accompagnement. Il est expressément précisé que :</p>
+        <ul class="legal-list">
+          <li>Les coachs FitBody <strong>ne sont pas des médecins</strong>, des nutritionnistes diplômés d'État, des kinésithérapeutes ou des professionnels de santé agréés.</li>
+          <li>Les conseils fournis ne constituent <strong>pas des prescriptions médicales</strong> ou diététiques et ne sauraient se substituer à un avis médical professionnel.</li>
+          <li>Le coach fourni par FitBody <strong>est joignable pendant la durée du programme</strong> via WhatsApp, dans des délais raisonnables (généralement sous 24 heures). FitBody ne garantit pas une disponibilité permanente et instantanée en dehors des horaires d'activité normaux.</li>
+          <li>FitBody se réserve le droit de <strong>changer de coach</strong> assurant le suivi d'un Client à tout moment, notamment en cas d'indisponibilité, sans préavis et sans que cela constitue un manquement au service.</li>
+        </ul>
+        <p>Le Client s'engage à communiquer avec le coach de manière respectueuse et appropriée. FitBody se réserve le droit de <strong>mettre fin au service sans remboursement</strong> en cas de comportement abusif, harcelant ou irrespectueux envers ses coachs.</p>
+      </div>
+    </div>
+
+    <!-- 6. SANTÉ -->
+    <div class="legal-section" id="cgv-sante">
+      <div class="section-num">Article 06</div>
+      <h2 class="section-title">Avertissement santé & responsabilité du Client</h2>
+      <div class="section-body">
+        <div class="alert-box">
+          <p><strong>IMPORTANT — À LIRE AVANT TOUT ACHAT :</strong> Les activités sportives comportent des risques inhérents. Il est fortement recommandé de consulter un médecin avant de démarrer tout programme d'entraînement, en particulier en cas de condition médicale préexistante.</p>
+        </div>
+        <p>En procédant à l'achat d'un service FitBody, le Client déclare et garantit :</p>
+        <ul class="legal-list">
+          <li>Être en bonne santé et ne pas souffrir d'une condition médicale, d'une blessure ou d'un handicap physique pouvant rendre la pratique sportive dangereuse, ou avoir consulté un médecin préalablement.</li>
+          <li>Être seul responsable de l'adéquation du programme à son état de santé, à sa condition physique et à ses capacités réelles.</li>
+          <li>Informer immédiatement son coach de tout problème de santé, douleur, blessure ou malaise survenant pendant le programme.</li>
+          <li>Être informé que <strong>les résultats obtenus peuvent varier d'une personne à l'autre</strong> et qu'aucun résultat spécifique (perte de poids, gain musculaire, etc.) ne peut être garanti.</li>
+          <li>Pratiquer les exercices du programme <strong>dans le respect de ses propres limites physiques</strong> et sous sa propre responsabilité.</li>
+        </ul>
+        <p>FitBody décline toute responsabilité pour tout accident, blessure, dommage corporel ou préjudice de quelque nature que ce soit survenant lors de la pratique du programme, qu'il soit dû à une mauvaise exécution des exercices, à une condition médicale préexistante ou à tout autre facteur indépendant de FitBody.</p>
+      </div>
+    </div>
+
+    <!-- 7. RESPONSABILITÉ -->
+    <div class="legal-section" id="cgv-responsabilite">
+      <div class="section-num">Article 07</div>
+      <h2 class="section-title">Limitation de responsabilité</h2>
+      <div class="section-body">
+        <p>FitBody s'engage à mettre en œuvre tous les moyens raisonnables pour fournir un service de qualité. Toutefois, la responsabilité de FitBody est expressément limitée comme suit :</p>
+        <ul class="legal-list">
+          <li>FitBody <strong>ne garantit pas d'atteindre un résultat précis</strong> (perte de poids chiffrée, gain musculaire quantifié, etc.). Les résultats dépendent de nombreux facteurs extérieurs hors du contrôle de FitBody, notamment l'alimentation du Client, son hygiène de vie, son assiduité, son état de santé et sa génétique.</li>
+          <li>FitBody ne pourra en aucun cas être tenu responsable de <strong>dommages indirects</strong>, de perte de chance, de préjudice moral, ou de tout dommage consécutif à l'utilisation ou à la non-utilisation du service.</li>
+          <li>En tout état de cause, la responsabilité totale de FitBody à l'égard du Client ne saurait excéder le montant effectivement payé par ce dernier pour le service concerné.</li>
+          <li>FitBody ne saurait être tenu responsable des <strong>interruptions de service liées à des facteurs techniques extérieurs</strong> (panne de réseau, indisponibilité de WhatsApp, force majeure, etc.).</li>
+          <li>FitBody ne saurait être tenu responsable si le Client <strong>ne suit pas les recommandations</strong> du programme ou modifie le programme de sa propre initiative.</li>
+        </ul>
+        <div class="note-box">
+          <p>Le Client reconnaît que FitBody n'est pas responsable du contenu des plateformes tierces utilisées pour la livraison du service (notamment WhatsApp / Meta Platforms), et que FitBody ne saurait être tenu responsable de tout dysfonctionnement de ces plateformes.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 8. PROPRIÉTÉ INTELLECTUELLE -->
+    <div class="legal-section" id="cgv-pi">
+      <div class="section-num">Article 08</div>
+      <h2 class="section-title">Propriété intellectuelle</h2>
+      <div class="section-body">
+        <p>L'ensemble des contenus fournis par FitBody dans le cadre du service — programmes d'entraînement, guides nutritionnels, textes, méthodes, supports visuels — constitue des <strong>œuvres protégées par le droit d'auteur</strong> et sont la propriété exclusive de FitBody.</p>
+        <ul class="legal-list">
+          <li>Le Client bénéficie d'une <strong>licence personnelle, non exclusive, non transférable et non cessible</strong> d'utilisation du programme acquis, à titre strictement personnel.</li>
+          <li>Il est <strong>strictement interdit</strong> de reproduire, copier, distribuer, vendre, revendre, partager, publier ou transmettre tout ou partie des programmes FitBody à des tiers, à titre gratuit ou onéreux, sans autorisation écrite préalable de FitBody.</li>
+          <li>Toute violation de ces droits expose le contrevenant à des <strong>poursuites civiles et pénales</strong>.</li>
+          <li>Il est notamment interdit de partager le programme sur les réseaux sociaux, groupes WhatsApp, forums ou tout autre canal de diffusion.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 9. RÉSILIATION -->
+    <div class="legal-section" id="cgv-resiliation">
+      <div class="section-num">Article 09</div>
+      <h2 class="section-title">Résiliation du service par FitBody</h2>
+      <div class="section-body">
+        <p>FitBody se réserve le droit de <strong>suspendre ou de mettre fin au service</strong> sans préavis et sans obligation de remboursement dans les cas suivants :</p>
+        <ul class="legal-list">
+          <li>Comportement abusif, harcelant, menaçant, irrespectueux ou diffamatoire envers un coach ou un représentant de FitBody.</li>
+          <li>Fraude avérée, tentative de chargeback non justifiée, ou toute manœuvre visant à obtenir le service sans paiement valide.</li>
+          <li>Violation des droits de propriété intellectuelle (partage, revente du programme).</li>
+          <li>Fourniture d'informations fausses lors de l'achat ou pendant le suivi.</li>
+          <li>Non-respect des présentes CGV.</li>
+        </ul>
+        <p>Dans ces cas, aucun remboursement ne sera accordé. FitBody n'aura aucune obligation de motiver sa décision de résiliation.</p>
+      </div>
+    </div>
+
+    <!-- 10. DROIT APPLICABLE -->
+    <div class="legal-section" id="cgv-droit">
+      <div class="section-num">Article 10</div>
+      <h2 class="section-title">Droit applicable & Règlement des litiges</h2>
+      <div class="section-body">
+        <p>Les présentes CGV sont rédigées en langue française. En cas de traduction dans une autre langue, la version française prévaut.</p>
+        <p>Tout litige relatif à l'interprétation, à l'exécution ou à la résiliation des présentes CGV sera soumis, après tentative de résolution amiable, à la juridiction compétente.</p>
+        <p>En cas de litige, le Client s'engage à <strong>contacter FitBody en priorité</strong> afin de rechercher une solution amiable avant tout recours judiciaire. Une réponse sera apportée dans un délai de 15 jours ouvrables.</p>
+        <div class="note-box">
+          <p>FitBody opère à l'échelle africaine. Les règles applicables peuvent varier selon la juridiction du Client. Dans tous les cas, FitBody applique en priorité les principes généraux de bonne foi commerciale et de loyauté envers ses clients.</p>
+        </div>
+      </div>
+    </div>
+
+    <hr class="legal-divider">
+
+    <!-- ══════════════════════════════════
+         PARTIE 2 — CONFIDENTIALITÉ
+    ══════════════════════════════════ -->
+
+    <div class="part-header">
+      <div class="part-num">Partie 2 / 2</div>
+      <div class="part-title">Politique de Confidentialité</div>
+      <div class="part-sub">Comment FitBody collecte, utilise et protège vos données personnelles.</div>
+    </div>
+
+    <!-- 11. COLLECTE -->
+    <div class="legal-section" id="pc-collecte">
+      <div class="section-num">Article 11</div>
+      <h2 class="section-title">Données personnelles collectées</h2>
+      <div class="section-body">
+        <p>Dans le cadre de la fourniture de ses services, FitBody est amenée à collecter des données personnelles vous concernant. Ces données sont collectées lors de :</p>
+        <ul class="legal-list">
+          <li><strong>La commande :</strong> données de contact (nom, numéro de téléphone), données financières traitées par Moneroo.</li>
+          <li><strong>L'échange avec le coach :</strong> informations de santé et de condition physique que vous communiquez volontairement (âge, objectifs, état de santé déclaré, photos avant/après si vous les partagez).</li>
+          <li><strong>La navigation :</strong> données techniques anonymisées (type d'appareil, pays de connexion) à des fins statistiques uniquement.</li>
+        </ul>
+        <div class="alert-box">
+          <p><strong>Données sensibles :</strong> Les informations de santé que vous communiquez à votre coach sont considérées comme des données sensibles. Elles sont traitées avec la plus grande confidentialité et ne sont utilisées qu'à des fins de personnalisation de votre programme.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 12. UTILISATION -->
+    <div class="legal-section" id="pc-utilisation">
+      <div class="section-num">Article 12</div>
+      <h2 class="section-title">Utilisation des données</h2>
+      <div class="section-body">
+        <p>FitBody utilise vos données personnelles exclusivement pour :</p>
+        <ul class="legal-list">
+          <li>La <strong>création et la personnalisation de votre programme</strong> sportif et nutritionnel.</li>
+          <li>La <strong>communication avec vous</strong> dans le cadre du suivi coaching via WhatsApp.</li>
+          <li>La <strong>gestion commerciale</strong> : traitement de votre commande, émission de reçus si demandé.</li>
+          <li>L'<strong>amélioration de nos services</strong> à partir de données anonymisées et agrégées.</li>
+          <li>L'envoi ponctuel d'<strong>informations sur nos offres</strong> si vous y avez consenti explicitement (opt-in).</li>
+        </ul>
+        <p>Vos données ne sont <strong>jamais utilisées</strong> à des fins de profilage commercial à des tiers, de revente de base de données, ou de toute autre finalité non listée ci-dessus.</p>
+      </div>
+    </div>
+
+    <!-- 13. PARTAGE -->
+    <div class="legal-section" id="pc-partage">
+      <div class="section-num">Article 13</div>
+      <h2 class="section-title">Partage et conservation des données</h2>
+      <div class="section-body">
+        <p>FitBody ne vend pas et ne loue pas vos données personnelles à des tiers. Vos données peuvent être partagées uniquement avec :</p>
+        <ul class="legal-list">
+          <li><strong>Les coachs FitBody</strong> dans le strict cadre de la fourniture du service.</li>
+          <li><strong>Notre prestataire de paiement Moneroo</strong> pour le traitement sécurisé des transactions.</li>
+          <li><strong>Les autorités compétentes</strong> en cas d'obligation légale ou de réquisition judiciaire.</li>
+        </ul>
+        <p>Vos données sont conservées pendant une durée maximale de <strong>3 ans</strong> à compter de votre dernier achat, à des fins de gestion commerciale et de service après-vente. Les échanges WhatsApp sont soumis à la politique de confidentialité de WhatsApp/Meta, sur laquelle FitBody n'a aucun contrôle.</p>
+        <div class="note-box">
+          <p>Si vous partagez volontairement des photos avant/après avec votre coach, celles-ci peuvent être utilisées à des fins de communication marketing (site web, réseaux sociaux) uniquement après obtention de votre accord explicite écrit. Sans cet accord, vos photos restent strictement confidentielles.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 14. VOS DROITS -->
+    <div class="legal-section" id="pc-droits">
+      <div class="section-num">Article 14</div>
+      <h2 class="section-title">Vos droits sur vos données</h2>
+      <div class="section-body">
+        <p>Conformément aux principes généraux de protection des données, vous disposez des droits suivants :</p>
+        <ul class="legal-list">
+          <li><strong>Droit d'accès :</strong> vous pouvez demander à consulter les données personnelles que FitBody détient à votre sujet.</li>
+          <li><strong>Droit de rectification :</strong> vous pouvez demander la correction de données inexactes ou incomplètes.</li>
+          <li><strong>Droit à l'effacement :</strong> vous pouvez demander la suppression de vos données, dans les limites de nos obligations légales de conservation.</li>
+          <li><strong>Droit d'opposition :</strong> vous pouvez vous opposer à l'utilisation de vos données à des fins de communication commerciale.</li>
+          <li><strong>Droit à la portabilité :</strong> vous pouvez demander à recevoir vos données dans un format lisible et structuré.</li>
+        </ul>
+        <p>Pour exercer ces droits, contactez-nous à l'adresse indiquée à l'article 15. Nous répondrons à votre demande dans un délai de <strong>30 jours</strong>.</p>
+      </div>
+    </div>
+
+    <!-- 15. CONTACT -->
+    <div class="legal-section" id="pc-contact">
+      <div class="section-num">Article 15</div>
+      <h2 class="section-title">Contact</h2>
+      <div class="section-body">
+        <p>Pour toute question relative aux présentes CGV ou à la politique de confidentialité, pour exercer vos droits sur vos données personnelles, ou pour toute réclamation, vous pouvez nous contacter via :</p>
+        <ul class="legal-list">
+          <li><strong>WhatsApp :</strong> le numéro de contact indiqué sur la page de confirmation de commande.</li>
+          <li><strong>Via le site internet</strong> fitbody.com</li>
+        </ul>
+        <p>FitBody s'engage à répondre à toute demande dans un <strong>délai raisonnable de 15 jours ouvrables</strong>.</p>
+        <div class="note-box">
+          <p>En cas de litige non résolu amiablement, vous pouvez vous rapprocher d'une association de protection des consommateurs de votre pays, ou des autorités compétentes en matière de protection des données personnelles.</p>
+        </div>
+        <p style="margin-top: 8px; font-size: 14px; color: var(--gris3);">
+          <em>Document mis à jour en janvier 2025. FitBody se réserve le droit de modifier ce document à tout moment. La version en vigueur est celle publiée sur le site au moment de la commande.</em>
+        </p>
+      </div>
+    </div>
+
+  </div><!-- /legal-content -->
+</div><!-- /legal-layout -->
+
+<!-- FOOTER -->
+<footer class="legal-footer">
+  <div class="footer-logo">Fit<em>Body</em></div>
+  <div class="footer-links">
+    <a href="index.html">Accueil</a>
+    <a href="confirmation.html">Après paiement</a>
+    <a href="legal.html">CGV & Confidentialité</a>
+  </div>
+  <div class="footer-copy">© 2025 FitBody · Tous droits réservés · Programme fitness avec coach · Disponible dans toute l'Afrique</div>
+</footer>
+
+<script>
+/* Surlignage du sommaire au scroll */
+(function() {
+  const sections = document.querySelectorAll('.legal-section');
+  const links = document.querySelectorAll('.toc-list a');
+
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        links.forEach(l => l.classList.remove('active'));
+        const id = '#' + entry.target.id;
+        const active = document.querySelector(`.toc-list a[href="${id}"]`);
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-20% 0px -70% 0px' });
+
+  sections.forEach(s => io.observe(s));
+})();
+</script>
+</body>
+</html>

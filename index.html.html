@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" type="image/svg+xml" href="favicon.svg">
-<link rel="alternate icon" href="favicon.ico">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23FF0090'/%3E%3Ctext x='16' y='23' font-family='Arial Black,sans-serif' font-size='22' font-weight='900' fill='white' text-anchor='middle'%3EF%3C/text%3E%3C/svg%3E">
 <title>FitBody — Galbe fessier & prise de masse avec coach</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -245,6 +244,45 @@ nav.scrolled { box-shadow: 0 4px 40px rgba(0,0,0,.07); top: 0 !important; }
   background-size: cover; background-position: center top;
 }
 /* dégradés supprimés — image hero 100% visible */
+
+/* Carrousel témoignages dans le hero */
+.hero-r-temo {
+  display: flex; flex-direction: column;
+  justify-content: stretch; padding: 0;
+  overflow: hidden; position: relative;
+  min-height: calc(100vh - 108px);
+}
+.hero-temo-grid {
+  display: flex; gap: 0;
+  overflow-x: auto; scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  height: 100%;
+}
+.hero-temo-grid::-webkit-scrollbar { display: none; }
+.hero-temo-grid .temo-card {
+  min-width: 100%; max-width: 100%;
+  scroll-snap-align: start; flex-shrink: 0;
+  border-radius: 0; border: none;
+  display: flex; flex-direction: column;
+  padding: 28px 32px;
+  background: var(--gris);
+  justify-content: flex-start;
+  overflow-y: auto;
+}
+.hero-temo-grid .temo-image {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 12px;
+  margin-bottom: 14px;
+  background-size: cover;
+  background-position: center;
+  flex-shrink: 0;
+}
+.hero-temo-arrows {
+  position: absolute; bottom: 20px; right: 20px;
+  display: flex; gap: 8px; z-index: 10;
+}
 
 /* Badges flottants */
 .hero-badge {
@@ -887,20 +925,23 @@ footer p { font-size: 13px; color: rgba(255,255,255,.2); }
       </div>
     </div>
 
-    <div class="hero-r">
-      <div class="hero-photo"></div>
-      <!-- 📸 Photo hero : CSS → --hero-img: url('ta-photo.jpg'); -->
-
-      <div class="hero-badge hb1">
-        <div class="hb-lbl">Résultats · Semaine 4</div>
-        <div class="hb-val">+<em>4cm</em></div>
-        <div class="hb-sub">Mariama B. · Abidjan</div>
-        <div class="hb-bar"><div class="hb-bar-fill" id="hb-fill"></div></div>
+    <div class="hero-r hero-r-temo">
+      <div class="hero-temo-grid" id="hero-temo-grid">
+        <div class="temo-card"><div class="temo-stars">★★★★★</div><div class="temo-pills"><span class="temo-pill">Fessiers +4cm</span><span class="temo-pill">Cuisses galbées</span></div><div class="temo-image" style="background-image: var(--temo1-img)"></div><p class="temo-quote">"En 7 semaines mes fessiers ont vraiment changé. Mon coach a progressé les charges à la semaine 3."</p><div class="temo-author"><span class="temo-av">🇸🇳</span><div><div class="temo-name">Fatou D.</div><div class="temo-loc">Dakar · Galbe fessier</div></div></div></div>
+        <div class="temo-card"><div class="temo-stars">★★★★★</div><div class="temo-pills"><span class="temo-pill">Fessiers +5cm</span><span class="temo-pill">Hanches galbées</span></div><div class="temo-image" style="background-image: var(--temo2-img)"></div><p class="temo-quote">"Mon coach m'a répondu à 23h pour corriger ma technique. Ce niveau de dispo, je n'y croyais pas."</p><div class="temo-author"><span class="temo-av">🇳🇬</span><div><div class="temo-name">Adaeze K.</div><div class="temo-loc">Lagos · Galbe fessier</div></div></div></div>
+        <div class="temo-card"><div class="temo-stars">★★★★★</div><div class="temo-pills"><span class="temo-pill">Fessiers ronds</span><span class="temo-pill">Cuisses +volume</span></div><div class="temo-image" style="background-image: var(--temo3-img)"></div><p class="temo-quote">"À 38 ans j'ai enfin des fessiers que je n'avais jamais eus. Adapté à ma morphologie."</p><div class="temo-author"><span class="temo-av">🇨🇮</span><div><div class="temo-name">Mariama B.</div><div class="temo-loc">Abidjan · Galbe fessier</div></div></div></div>
+        <div class="temo-card"><div class="temo-stars">★★★★★</div><div class="temo-pills"><span class="temo-pill">Fessiers +4cm</span><span class="temo-pill">Corps tonique</span></div><div class="temo-image" style="background-image: var(--temo4-img)"></div><p class="temo-quote">"Le programme galbe a tout changé. Mes cuisses et mes fessiers ont pris du volume en 5 semaines."</p><div class="temo-author"><span class="temo-av">🇨🇲</span><div><div class="temo-name">Cynthia M.</div><div class="temo-loc">Douala · Galbe fessier</div></div></div></div>
+        <div class="temo-card"><div class="temo-stars">★★★★★</div><div class="temo-pills"><span class="temo-pill">Silhouette en S</span><span class="temo-pill">Hanches +volume</span></div><div class="temo-image" style="background-image: var(--temo5-img)"></div><p class="temo-quote">"Je n'aurais jamais cru que c'était possible à la maison. Mon coach a tout adapté à mes horaires."</p><div class="temo-author"><span class="temo-av">🇬🇭</span><div><div class="temo-name">Ama K.</div><div class="temo-loc">Accra · Galbe fessier</div></div></div></div>
+        <div class="temo-card"><div class="temo-stars">★★★★★</div><div class="temo-pills"><span class="temo-pill">Fessiers ronds</span><span class="temo-pill">Ventre plat</span></div><div class="temo-image" style="background-image: var(--temo6-img)"></div><p class="temo-quote">"Les résultats sur mes fessiers sont impressionnants. Le guide nutrition a fait toute la différence."</p><div class="temo-author"><span class="temo-av">🇧🇯</span><div><div class="temo-name">Roukayat S.</div><div class="temo-loc">Cotonou · Galbe fessier</div></div></div></div>
+        <div class="temo-card"><div class="temo-stars">★★★★★</div><div class="temo-pills"><span class="temo-pill">+6cm hanches</span><span class="temo-pill">Corps sculptée</span></div><div class="temo-image" style="background-image: var(--temo7-img)"></div><p class="temo-quote">"Mon coach était là à chaque séance. Il a ajusté dès la semaine 4 quand j'ai stagnée. Résultat là."</p><div class="temo-author"><span class="temo-av">🇹🇬</span><div><div class="temo-name">Kossiwa A.</div><div class="temo-loc">Lomé · Galbe fessier</div></div></div></div>
+        <div class="temo-card"><div class="temo-stars">★★★★★</div><div class="temo-pills"><span class="temo-pill">Fessiers +3cm</span><span class="temo-pill">Cuisses galbées</span></div><div class="temo-image" style="background-image: var(--temo8-img)"></div><p class="temo-quote">"Simple, efficace, rapide à mettre en place. Mon coach m'a envoyé le programme en 10 minutes."</p><div class="temo-author"><span class="temo-av">🇲🇱</span><div><div class="temo-name">Djénéba T.</div><div class="temo-loc">Bamako · Galbe fessier</div></div></div></div>
+        <div class="temo-card"><div class="temo-stars">★★★★★</div><div class="temo-pills"><span class="temo-pill">Fessiers +5cm</span><span class="temo-pill">Corps tonique</span></div><div class="temo-image" style="background-image: var(--temo9-img)"></div><p class="temo-quote">"7 semaines de suivi personnalisé. Mon coach ne m'a jamais lâchée. Mes fessiers sont là pour de vrai."</p><div class="temo-author"><span class="temo-av">🇧🇫</span><div><div class="temo-name">Aminata D.</div><div class="temo-loc">Ouagadougou · Galbe fessier</div></div></div></div>
+        <div class="temo-card"><div class="temo-stars">★★★★★</div><div class="temo-pills"><span class="temo-pill">Fessiers +4cm</span><span class="temo-pill">Silhouette en S</span></div><div class="temo-image" style="background-image: var(--temo10-img)"></div><p class="temo-quote">"Je recommande à toutes mes amies. Le coach était patient, précis sur chaque mouvement."</p><div class="temo-author"><span class="temo-av">🇲🇱</span><div><div class="temo-name">Bintou K.</div><div class="temo-loc">Bamako · Galbe fessier</div></div></div></div>
       </div>
-      <div class="hero-badge hb2">
-        <div class="hb-lbl">Coach disponible en</div>
-        <div class="hb-val"><em>5</em> min</div>
-        <div class="hb-sub">après paiement confirmé</div>
+      <!-- Flèches -->
+      <div class="hero-temo-arrows">
+        <button class="temo-arrow" onclick="scrollHeroTemo(-1)">←</button>
+        <button class="temo-arrow" onclick="scrollHeroTemo(1)">→</button>
       </div>
     </div>
   </section>
@@ -1095,157 +1136,8 @@ footer p { font-size: 13px; color: rgba(255,255,255,.2); }
     <div class="stat-item sr sr-d3"><div class="stat-num">4.9<em>/5</em></div><div class="stat-lbl">note moyenne des clientes</div></div>
   </div>
 
-  <!-- TÉMOIGNAGES -->
-  <section class="temo-section">
-    <div class="temo-header sr">
-      <p class="section-eyebrow">Elles ont sculpté leurs fessiers</p>
-      <h2 class="temo-h2">Elles ont <em>sculpté</em> leur corps.</h2>
-    </div>
 
-    <div class="temo-carousel-wrap">
-      <div class="temo-grid" id="temo-grid">
-
-        <!-- TÉMOIGNAGE 1 -->
-        <div class="temo-card">
-          <div class="temo-stars">★★★★★</div>
-          <div class="temo-pills"><span class="temo-pill">Fessiers +4cm</span><span class="temo-pill">Cuisses galbées</span></div>
-          <!-- 📸 Photo témoignage 1 : change la variable --temo1-img en haut du fichier -->
-          <div class="temo-image" style="background-image: var(--temo1-img)"></div>
-          <p class="temo-quote">"En 7 semaines mes fessiers ont vraiment changé. Mon coach a progressé les charges à la semaine 3. C'est ça la vraie différence."</p>
-          <div class="temo-author">
-            <span class="temo-av">🇸🇳</span>
-            <div><div class="temo-name">Fatou D.</div><div class="temo-loc">Dakar, Sénégal · Galbe fessier</div></div>
-          </div>
-        </div>
-
-        <!-- TÉMOIGNAGE 2 -->
-        <div class="temo-card">
-          <div class="temo-stars">★★★★★</div>
-          <div class="temo-pills"><span class="temo-pill">Fessiers +5cm</span><span class="temo-pill">Hanches galbées</span></div>
-          <!-- 📸 Photo témoignage 2 : change la variable --temo2-img en haut du fichier -->
-          <div class="temo-image" style="background-image: var(--temo2-img)"></div>
-          <p class="temo-quote">"Mon coach m'a répondu à 23h un mercredi pour corriger ma technique de hip thrust. Ce niveau de dispo, je n'y croyais pas."</p>
-          <div class="temo-author">
-            <span class="temo-av">🇳🇬</span>
-            <div><div class="temo-name">Adaeze K.</div><div class="temo-loc">Lagos, Nigeria · Galbe fessier</div></div>
-          </div>
-        </div>
-
-        <!-- TÉMOIGNAGE 3 -->
-        <div class="temo-card">
-          <div class="temo-stars">★★★★★</div>
-          <div class="temo-pills"><span class="temo-pill">Fessiers ronds</span><span class="temo-pill">Cuisses +volume</span></div>
-          <!-- 📸 Photo témoignage 3 : change la variable --temo3-img en haut du fichier -->
-          <div class="temo-image" style="background-image: var(--temo3-img)"></div>
-          <p class="temo-quote">"À 38 ans j'ai enfin des fessiers que je n'avais jamais eus. Mon coach a adapté chaque exercice à ma morphologie. Incroyable."</p>
-          <div class="temo-author">
-            <span class="temo-av">🇨🇮</span>
-            <div><div class="temo-name">Mariama B.</div><div class="temo-loc">Abidjan, Côte d'Ivoire · Galbe fessier</div></div>
-          </div>
-        </div>
-
-        <!-- TÉMOIGNAGE 4 -->
-        <div class="temo-card">
-          <div class="temo-stars">★★★★★</div>
-          <div class="temo-pills"><span class="temo-pill">Fessiers +4cm</span><span class="temo-pill">Corps tonique</span></div>
-          <!-- 📸 Photo témoignage 4 : change la variable --temo4-img en haut du fichier -->
-          <div class="temo-image" style="background-image: var(--temo4-img)"></div>
-          <p class="temo-quote">"J'avais peur d'avoir des fessiers encore plus plats après mon accouchement. Mon coach a tout changé. Merci FitBody."</p>
-          <div class="temo-author">
-            <span class="temo-av">🇧🇯</span>
-            <div><div class="temo-name">Sandrine A.</div><div class="temo-loc">Cotonou, Bénin · Galbe fessier</div></div>
-          </div>
-        </div>
-
-        <!-- TÉMOIGNAGE 5 -->
-        <div class="temo-card">
-          <div class="temo-stars">★★★★★</div>
-          <div class="temo-pills"><span class="temo-pill">Fessiers +6cm</span><span class="temo-pill">Silhouette en S</span></div>
-          <!-- 📸 Photo témoignage 5 : change la variable --temo5-img en haut du fichier -->
-          <div class="temo-image" style="background-image: var(--temo5-img)"></div>
-          <p class="temo-quote">"Résultats visibles dès la semaine 3. Mes jeans étaient plus serrés aux fessiers et mes cuisses avaient du volume. Incroyable."</p>
-          <div class="temo-author">
-            <span class="temo-av">🇬🇭</span>
-            <div><div class="temo-name">Ama O.</div><div class="temo-loc">Accra, Ghana · Galbe fessier</div></div>
-          </div>
-        </div>
-
-        <!-- TÉMOIGNAGE 6 -->
-        <div class="temo-card">
-          <div class="temo-stars">★★★★★</div>
-          <div class="temo-pills"><span class="temo-pill">Fessiers sculptés</span><span class="temo-pill">Hanches +4cm</span></div>
-          <!-- 📸 Photo témoignage 6 : change la variable --temo6-img en haut du fichier -->
-          <div class="temo-image" style="background-image: var(--temo6-img)"></div>
-          <p class="temo-quote">"J'avais essayé 4 programmes avant FitBody. Seul celui-là m'a vraiment donné du galbe. Le coach fait toute la différence."</p>
-          <div class="temo-author">
-            <span class="temo-av">🇨🇲</span>
-            <div><div class="temo-name">Isabelle N.</div><div class="temo-loc">Douala, Cameroun · Galbe fessier</div></div>
-          </div>
-        </div>
-
-        <!-- TÉMOIGNAGE 7 -->
-        <div class="temo-card">
-          <div class="temo-stars">★★★★★</div>
-          <div class="temo-pills"><span class="temo-pill">Fessiers +5cm</span><span class="temo-pill">Corps féminin</span></div>
-          <!-- 📸 Photo témoignage 7 : change la variable --temo7-img en haut du fichier -->
-          <div class="temo-image" style="background-image: var(--temo7-img)"></div>
-          <p class="temo-quote">"Le programme était adapté à ma vie de maman. 4 séances par semaine et des fessiers galbés que je n'espérais plus avoir."</p>
-          <div class="temo-author">
-            <span class="temo-av">🇸🇳</span>
-            <div><div class="temo-name">Khady F.</div><div class="temo-loc">Saint-Louis, Sénégal · Galbe fessier</div></div>
-          </div>
-        </div>
-
-        <!-- TÉMOIGNAGE 8 -->
-        <div class="temo-card">
-          <div class="temo-stars">★★★★★</div>
-          <div class="temo-pills"><span class="temo-pill">Fessiers ronds</span><span class="temo-pill">Taille marquée</span></div>
-          <!-- 📸 Photo témoignage 8 : change la variable --temo8-img en haut du fichier -->
-          <div class="temo-image" style="background-image: var(--temo8-img)"></div>
-          <p class="temo-quote">"J'étais sceptique. Mais quand mon coach m'a envoyé mon programme galbe ciblé avec la progression semaine par semaine, j'ai compris."</p>
-          <div class="temo-author">
-            <span class="temo-av">🇹🇬</span>
-            <div><div class="temo-name">Akosua M.</div><div class="temo-loc">Lomé, Togo · Galbe fessier</div></div>
-          </div>
-        </div>
-
-        <!-- TÉMOIGNAGE 9 -->
-        <div class="temo-card">
-          <div class="temo-stars">★★★★★</div>
-          <div class="temo-pills"><span class="temo-pill">Fessiers +5cm</span><span class="temo-pill">Cuisses galbées</span></div>
-          <!-- 📸 Photo témoignage 9 : change la variable --temo9-img en haut du fichier -->
-          <div class="temo-image" style="background-image: var(--temo9-img)"></div>
-          <p class="temo-quote">"Mon coach a augmenté la difficulté à mi-parcours parce que mes fessiers répondaient bien. C'est ça le vrai suivi galbe."</p>
-          <div class="temo-author">
-            <span class="temo-av">🇧🇫</span>
-            <div><div class="temo-name">Aminata D.</div><div class="temo-loc">Ouagadougou, Burkina · Galbe fessier</div></div>
-          </div>
-        </div>
-
-        <!-- TÉMOIGNAGE 10 -->
-        <div class="temo-card">
-          <div class="temo-stars">★★★★★</div>
-          <div class="temo-pills"><span class="temo-pill">Fessiers +4cm</span><span class="temo-pill">Silhouette en S</span></div>
-          <!-- 📸 Photo témoignage 10 : change la variable --temo10-img en haut du fichier -->
-          <div class="temo-image" style="background-image: var(--temo10-img)"></div>
-          <p class="temo-quote">"Je recommande à toutes mes amies. Le coach était patient, précis sur chaque mouvement. Mes fessiers sont là, devant le miroir."</p>
-          <div class="temo-author">
-            <span class="temo-av">🇲🇱</span>
-            <div><div class="temo-name">Bintou K.</div><div class="temo-loc">Bamako, Mali · Galbe fessier</div></div>
-          </div>
-        </div>
-
-      </div><!-- /temo-grid -->
-
-      <!-- Flèches mobile -->
-      <div class="temo-arrows">
-        <button class="temo-arrow" id="temo-prev" onclick="scrollTemo(-1)">←</button>
-        <button class="temo-arrow" id="temo-next" onclick="scrollTemo(1)">→</button>
-      </div>
-    </div>
-  </section>
-
-  <!-- OFFRE & PRIX -->
+  <!-- OFFRE-- OFFRE & PRIX -->
   <section class="offer-section">
     <div class="offer-grid">
       <div>
@@ -1262,10 +1154,10 @@ footer p { font-size: 13px; color: rgba(255,255,255,.2); }
 
       <div class="sr sr-d2">
         <div class="price-box">
-          <div class="price-was">9 000 XOF</div>
-          <div class="price-big"><sup>XOF</sup> 5 000</div>
+          <div class="price-was">37 000 XOF</div>
+          <div class="price-big"><sup>XOF</sup> 10 900</div>
           <div class="price-desc">Paiement unique · Coach inclus · Accès immédiat</div>
-          <div class="price-badge">🔥 -44% · Offre limitée</div>
+          <div class="price-badge">🔥 -71% · Offre limitée</div>
 
           <button class="btn-acheter" onclick="showPayment()">
             Je veux mes fessiers galbés →
@@ -1337,7 +1229,7 @@ footer p { font-size: 13px; color: rgba(255,255,255,.2); }
         </div>
         <div class="pay-row total">
           <span class="pr-label">Total</span>
-          <span class="pr-val" id="total-val">5 000 XOF</span>
+          <span class="pr-val" id="total-val">10 900 XOF</span>
         </div>
       </div>
 
@@ -1347,7 +1239,7 @@ footer p { font-size: 13px; color: rgba(255,255,255,.2); }
       </div>
 
       <button class="btn-pay" id="pay-btn" onclick="startPay()">
-        <span id="pay-btn-txt">Payer 5 000 XOF →</span>
+        <span id="pay-btn-txt">Payer 10 900 XOF →</span>
       </button>
 
       <div class="pay-methods-grid">
@@ -1367,7 +1259,7 @@ footer p { font-size: 13px; color: rgba(255,255,255,.2); }
 /* ═══════════════════════════════════
    CONFIG — modifie ici
 ═══════════════════════════════════ */
-let amount = 5000;
+let amount = 10900;
 const PROMOS = { 'FITBODY': 500, 'SUMMER': 800, 'LANCEMENT': 1000 };
 
 /* ─── WhatsApp ───────────────────────
@@ -1379,6 +1271,31 @@ const WHATSAPP_MSG = encodeURIComponent(
   "Bonjour ! Je viens de régler mon programme FitBody Galbe Fessier 🍑\n\n" +
   "Je suis prête à commencer ! Peux-tu créer mon programme galbe & prise de masse personnalisé ? 💪"
 );
+
+/* ═══════════════════════════════════
+   CARROUSEL HERO TÉMOIGNAGES
+═══════════════════════════════════ */
+function scrollHeroTemo(dir) {
+  const g = document.getElementById('hero-temo-grid');
+  if (!g) return;
+  const card = g.querySelector('.temo-card');
+  const w = card ? card.offsetWidth + 14 : 274;
+  const max = g.scrollWidth - g.clientWidth;
+  if (dir > 0 && g.scrollLeft >= max - 10) { g.scrollTo({ left: 0, behavior: 'smooth' }); }
+  else if (dir < 0 && g.scrollLeft <= 10) { g.scrollTo({ left: max, behavior: 'smooth' }); }
+  else { g.scrollBy({ left: dir * w, behavior: 'smooth' }); }
+}
+// Auto-scroll hero carrousel
+(function() {
+  const g = document.getElementById('hero-temo-grid');
+  if (!g) return;
+  let t = setInterval(() => {
+    const max = g.scrollWidth - g.clientWidth;
+    if (g.scrollLeft >= max - 10) g.scrollTo({ left: 0, behavior: 'smooth' });
+    else g.scrollBy({ left: 274, behavior: 'smooth' });
+  }, 3000);
+  g.addEventListener('touchstart', () => clearInterval(t), { passive: true });
+})();
 
 /* ═══════════════════════════════════
    NAV SCROLL

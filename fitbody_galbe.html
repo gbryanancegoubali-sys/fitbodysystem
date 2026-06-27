@@ -1269,7 +1269,7 @@ const PROMOS = { 'FITBODY': 500, 'SUMMER': 800, 'LANCEMENT': 1000 };
 const WHATSAPP_NUMBER = '22900000000'; // 👈 Change ce numéro par le tien (indicatif + numéro, sans +)
 const WHATSAPP_MSG = encodeURIComponent(
   "Bonjour ! Je viens de régler mon programme FitBody Galbe Fessier 🍑\n\n" +
-  "Je suis prête à commencer ! Peux-tu créer mon programme galbe & prise de masse personnalisé ? 💪"
+  "Je suis prête à commencer ! Pouvez-vous créer mon programme galbe & prise de masse personnalisé ? 💪"
 );
 
 /* ═══════════════════════════════════
@@ -1504,6 +1504,8 @@ function startPay() {
 /* ─── Redirection après paiement ──────────────────────────────────────────
    Passe d'abord par la page de confirmation, qui redirige ensuite vers WhatsApp.
 */
+   const WHATSAPP_NUMBER = '22990198451345';
+const WHATSAPP_MSG = encodeURIComponent("Bonjour ! Je viens de régler mon programme FitBody. Je suis prête à commencer ! 🔥");
 function redirectToWhatsApp() {
   const waUrl = encodeURIComponent(`https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MSG}`);
   window.location.href = `confirmation.html?wa=${waUrl}`;

@@ -1508,6 +1508,8 @@ function startPay() {
 /* ─── Redirection après paiement ──────────────────────────────────────────
    Passe d'abord par la page de confirmation, qui redirige ensuite vers WhatsApp.
 */
+   const WHATSAPP_NUMBER = '22990198451345';
+const WHATSAPP_MSG = encodeURIComponent("Bonjour ! Je viens de régler mon programme FitBody. Je suis prête à commencer ! 🔥");
 function redirectToWhatsApp() {
   const waUrl = encodeURIComponent(`https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MSG}`);
   window.location.href = `confirmation.html?wa=${waUrl}`;
